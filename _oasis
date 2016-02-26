@@ -1,0 +1,16 @@
+Name: olmi
+Version: 0.1
+Synopsis: Provide interface for monads in OCaml.
+Authors: Xavier Van de Woestyne <xaviervdw@gmail.com>
+License: GPL
+
+Description: This library provide functor to create monadic combinators
+Homepage: http://foobar.org
+
+OASISFormat: 0.4
+BuildTools: ocamlbuild
+Plugins: META (0.4), DevFiles (0.4)
+
+Library "olmi"
+  Path: lib
+  Modules: Olmi
