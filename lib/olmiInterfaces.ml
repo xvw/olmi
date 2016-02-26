@@ -163,20 +163,25 @@ sig
   val liftM4 : ('a -> 'b -> 'c -> 'd -> 'e) -> 'a t-> 'b t-> 'c t -> 'd t -> 'e t
 
   (** Promote a function to a monad, scanning the monadic arguments from left to right *)
-  val liftM4 : ('a -> 'b -> 'c -> 'd -> 'e -> 'f) -> 'a t-> 'b t-> 'c t -> 'd t -> 'e t -> 'f t
+  val liftM5 : ('a -> 'b -> 'c -> 'd -> 'e -> 'f) -> 'a t-> 'b t-> 'c t -> 'd t -> 'e t -> 'f t
 
 end
 
 (** Provide the complete interface of monadic operations *)
 module type INTERFACE =
 sig
+
   include BASIC_INTERFACE
   include INFIX with type 'a t := 'a t
   include LIFT with type 'a t := 'a t
 
   (** void value discards or ignores the result of evaluation, such as the
-        return value of an IO action. *)
+      return value of an IO action. *)
   val void : 'a t -> unit t
+
+  (** forever act repeats the action infinitely. *)
+  val forever : 'a t -> 'b t
+
 
 end
 
@@ -205,8 +210,9 @@ sig
   val ( <+> ) : 'a t -> 'a t -> 'a t
 
   (** [ list >>= keep_if predicat ] returns a list containing all values
-        who's respecting the gived predicat. *)
+       who's respecting the gived predicat. *)
   val keep_if : ('a -> bool) -> 'a -> 'a t
+
 
 end
 
