@@ -19,13 +19,11 @@
  *
 *)
 
-module Interfaces = OlmiInterfaces
-module Make = OlmiMake
+module Requirement = OlmiMake.WithBind(
+  struct
+    type 'a t = 'a
+    let return x = x
+    let bind x f = f x
+  end)
 
-module Extension =
-struct
-
-  module Identity = OlmiIdentity
-  module Option = OlmiOption
-
-end
+include OlmiMake.Monad(Requirement)

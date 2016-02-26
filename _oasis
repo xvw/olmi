@@ -16,4 +16,5 @@ Library "olmi"
   Modules:
     Olmi,
     OlmiInterfaces,
-    OlmiMake
+    OlmiMake,
+    OlmiIdentity
