@@ -92,5 +92,16 @@ struct
 
   let void _ = return ()
 
+end
 
+(* Functor for PLUS Monad *)
+module Plus
+    (M : BASIC_INTERFACE)
+    (P : PLUS with type 'a t = 'a M.t) : PLUS_INTERFACE =
+struct
+  include Monad(M)
+  let mempty = P.mempty
+  let mplus a b = P.mplus a b
+  let ( <+> ) = mplus
+  let keep_if f x = if f x then return x else mempty
 end

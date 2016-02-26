@@ -19,14 +19,12 @@
  *
 *)
 
-module Interfaces = OlmiInterfaces
-module Make = OlmiMake
+include List
 
-module Extension =
-struct
+module Requirement = OlmiMake.WithJoin(struct
+    type 'a t = 'a list
+    let return x = x :: []
+    let fmap f m = map f m
+    let join m = flatten m
+  end)
 
-  module Identity = OlmiIdentity
-  module Option = OlmiOption
-  module List = OlmiList
-
-end
