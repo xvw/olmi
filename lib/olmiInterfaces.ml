@@ -165,5 +165,48 @@ sig
   (** Promote a function to a monad, scanning the monadic arguments from left to right *)
   val liftM4 : ('a -> 'b -> 'c -> 'd -> 'e -> 'f) -> 'a t-> 'b t-> 'c t -> 'd t -> 'e t -> 'f t
 
+end
+
+(** Provide the complete interface of monadic operations *)
+module type INTERFACE =
+sig
+  include BASIC_INTERFACE
+  include INFIX with type 'a t := 'a t
+  include LIFT with type 'a t := 'a t
+
+  (** void value discards or ignores the result of evaluation, such as the
+        return value of an IO action. *)
+  val void : 'a t -> unit t
 
 end
+
+(** Provide the minimal interface for a Monad Plus *)
+module type PLUS =
+sig
+
+  type 'a t
+
+  (** Represent the neutral element *)
+  val mempty : 'a t
+
+  (** Monoïd combination *)
+  val mplus : 'a t -> 'a t -> 'a t
+
+end
+
+(** Provide a complete interface for Monad plus *)
+module type PLUS_INTERFACE =
+sig
+
+  include INTERFACE
+  include PLUS with type 'a t := 'a t
+
+  (** Infix operator for mplus *)
+  val ( <+> ) : 'a t -> 'a t -> 'a t
+
+  (** [ list >>= keep_if predicat ] returns a list containing all values
+        who's respecting the gived predicat. *)
+  val keep_if : ('a -> bool) -> 'a -> 'a t
+
+end
+
