@@ -15,4 +15,5 @@ Library "olmi"
   Path: lib
   Modules:
     Olmi,
-    OlmiInterfaces
+    OlmiInterfaces,
+    OlmiMake
