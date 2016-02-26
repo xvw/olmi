@@ -179,10 +179,6 @@ sig
       return value of an IO action. *)
   val void : 'a t -> unit t
 
-  (** forever act repeats the action infinitely. *)
-  val forever : 'a t -> 'b t
-
-
 end
 
 (** Provide the minimal interface for a Monad Plus *)

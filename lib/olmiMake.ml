@@ -90,8 +90,7 @@ struct
     m4 >>= fun a ->
     m5 >>= fun b -> return (f x y z a b)
 
-
   let void _ = return ()
-  let forever x = let rec a = x >> a in a
+
 
 end
