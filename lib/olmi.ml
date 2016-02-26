@@ -1,5 +1,5 @@
 (*
- * Parser
+ * Olmi
  *
  * Copyright (C) 2015  Xavier Van de Woestyne <xaviervdw@gmail.com>
  *
@@ -19,3 +19,4 @@
  *
 *)
 
+module Interfaces = OlmiInterfaces
