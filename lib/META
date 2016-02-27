@@ -1,0 +1,11 @@
+# OASIS_START
+# DO NOT EDIT (digest: 9f14db052548c5f2e84cd162021bec1c)
+version = "0.1"
+description = "Provide interface for monads in OCaml."
+archive(byte) = "olmi.cma"
+archive(byte, plugin) = "olmi.cma"
+archive(native) = "olmi.cmxa"
+archive(native, plugin) = "olmi.cmxs"
+exists_if = "olmi.cma"
+# OASIS_STOP
+
