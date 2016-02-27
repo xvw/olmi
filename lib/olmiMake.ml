@@ -97,7 +97,7 @@ end
 (* Functor for PLUS Monad *)
 module Plus
     (M : BASIC_INTERFACE)
-    (P : PLUS with type 'a t = 'a M.t) : PLUS_INTERFACE =
+    (P : PLUS with type 'a t = 'a M.t) : PLUS_INTERFACE with type 'a t = 'a M.t  =
 struct
   include Monad(M)
   let mempty = P.mempty

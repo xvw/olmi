@@ -21,12 +21,3 @@
 
 module Interfaces = OlmiInterfaces
 module Make = OlmiMake
-
-module Extension =
-struct
-
-  module Identity = OlmiIdentity
-  module Option = OlmiOption
-  module List = OlmiList
-
-end

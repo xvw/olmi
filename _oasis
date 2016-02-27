@@ -16,5 +16,13 @@ Library "olmi"
   Modules:
     Olmi,
     OlmiInterfaces,
-    OlmiMake,
-    OlmiIdentity
+    OlmiMake
+
+Library "olmiExamples"
+  Path: examples
+  Modules:
+    OlmiExamples,
+    OlmiIdentity,
+    OlmiOption,
+    OlmiList
+  BuildDepends: olmi
