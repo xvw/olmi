@@ -5,7 +5,7 @@ Authors: Xavier Van de Woestyne <xaviervdw@gmail.com>
 License: GPL
 
 Description: This library provide functor to create monadic combinators
-Homepage: http://foobar.org
+Homepage: https://github.com/xvw/olmi
 
 OASISFormat: 0.4
 BuildTools: ocamlbuild
@@ -17,12 +17,3 @@ Library "olmi"
     Olmi,
     OlmiInterfaces,
     OlmiMake
-
-Library "olmiExamples"
-  Path: examples
-  Modules:
-    OlmiExamples,
-    OlmiIdentity,
-    OlmiOption,
-    OlmiList
-  BuildDepends: olmi
