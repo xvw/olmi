@@ -10,7 +10,7 @@ way for creating monads :
 ## Exposed functors 
 
 -  `Make.WithBind(M : Interfaces.BIND) : Interfaces.BASIC_INTERFACE`
--  `Make.WithJoind(M : Interfaces.Make.JOIN) : Interfaces.BASIC_INTERFACE`
+-  `Make.WithJoin(M : Interfaces.JOIN) : Interfaces.BASIC_INTERFACE`
 -  `Make.Monad(M : Interfaces.BASIC_INTERFACE) : Interfaces.INTERFACE`
 -  `Make.Plus(M : Interfaces.BASIC_INTERFACE) (Interfaces.PLUS_INTERFACE)`
 
