@@ -1,6 +1,6 @@
 opam-version: "1.2"
 name: "olmi"
-version: "1.1"
+version: "1.2"
 maintainer: "xvw <xavier.vdw@gmail.com>"
 authors: "xvw <xavier.vdw@gmail.com>"
 homepage: "https://github.com/xvw/olmi"
