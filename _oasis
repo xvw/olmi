@@ -8,8 +8,9 @@ Description: This library provide functor to create monadic combinators
 Homepage: https://github.com/xvw/olmi
 
 OASISFormat: 0.4
-BuildTools: ocamlbuild
+BuildTools: ocamlbuild, ocamldoc
 Plugins: META (0.4), DevFiles (0.4)
+AlphaFeatures: ocamlbuild_more_args
 
 Library "olmi"
   Path: lib
@@ -17,3 +18,14 @@ Library "olmi"
     Olmi,
     OlmiInterfaces,
     OlmiMake
+
+
+Document api
+  Title:                Documentation and API reference for Olmi
+  Type:                 ocamlbuild (0.4)
+  BuildTools+:          ocamldoc
+  InstallDir:           $htmldir/jsoo_router
+  XOCamlbuildPath:      .
+  XOCamlbuildLibraries: jsoo_router
+  Install:              true
+  XOCamlbuildExtraArgs: "-docflags '-colorize-code -charset utf-8 -hide Pervasives'"
