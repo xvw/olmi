@@ -7,15 +7,10 @@ homepage: "https://github.com/xvw/olmi"
 bug-reports: "https://github.com/xvw/olmi/issues"
 license: "GPLv3"
 dev-repo: "https://github.com/xvw/olmi.git"
-build: [
-  ["./configure" "--prefix=%{prefix}%"]
-  [make]
-]
-install: [make "install"]
-remove: ["ocamlfind" "remove" "olmi"]
+build: [["jbuilder" "build" "-p" name "-j" jobs]]
+available: [ ocaml-version >= "4.00.0" ]
 depends: [
   "ocamlfind" {build}
-  "ocamlbuild" {build}
+  "jbuilder" {build}
 ]
 
-available: [ ocaml-version >= "4.00.0" ]
