@@ -1,4 +1,0 @@
-S .
-S lib
-B _build/lib
-B _build
